@@ -102,6 +102,20 @@ Copy `rules/AGENTS.md` into your project root or AI agent config to instruct AI 
 
 ---
 
+## 💖 Acknowledgements & Credits
+
+`agent-code-guard` stands on the shoulders of these incredible open-source tools and their creators:
+
+- **[Gitleaks](https://github.com/gitleaks/gitleaks)** — Built with passion by [Zachary Rice](https://github.com/zricethezav) (`@zricethezav`). Essential protection against secret leaks.
+- **[Lefthook](https://github.com/evilmartians/lefthook)** — Created by [Evil Martians](https://evilmartians.com) and maintained by [Alex Krasnov](https://github.com/mrexox) & team. Blazing-fast Git hooks manager.
+- **[OSV-Scanner](https://github.com/google/osv-scanner)** — Developed by the [Google Open Source Security Team](https://github.com/google) and the [OSV.dev](https://osv.dev) community.
+- **[Knip](https://github.com/webpro-nl/knip)** — Masterfully crafted by [Lars Kappert](https://github.com/webpro) (`@webpro`). The ultimate dead code eliminator for JS/TS.
+- **[jscpd](https://github.com/kucherenko/jscpd)** — Created and maintained by [Andrey Kucherenko](https://github.com/kucherenko). Multi-language duplicate code detection engine.
+
+Thank you to all the maintainers for keeping the software ecosystem clean, fast, and secure!
+
+---
+
 ## License
 
 [Apache 2.0](LICENSE) © [Javad Hamed](https://github.com/javadhamed)
