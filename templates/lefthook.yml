@@ -1,0 +1,20 @@
+pre-commit:
+  parallel: true
+  commands:
+    gitleaks:
+      tags: security secrets
+      run: gitleaks protect --staged --verbose
+    jscpd:
+      tags: quality dry
+      run: npx jscpd {staged_files} --threshold 5
+    knip:
+      tags: quality dead-code
+      glob: "*.{js,ts,jsx,tsx}"
+      run: npx knip
+
+pre-push:
+  parallel: false
+  commands:
+    osv-scanner:
+      tags: security vulnerabilities
+      run: osv-scanner -r .
