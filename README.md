@@ -1,11 +1,17 @@
-# agent-code-guard
+# agent-code-guard 🛡️
+
+[English](#english) | [فارسی](#persian)
+
+---
+
+<a name="english"></a>
+## English
+
 Universal security, code quality, and dependency guardrails for AI coding agents and human engineers.
 
 Built for **Google Antigravity**, **Claude Code**, **Codex**, **Cursor**, and modern Git workflows.
 
----
-
-## What is agent-code-guard?
+### What is agent-code-guard?
 
 AI agents write code at superhuman speed, but speed without guardrails introduces risks:
 - ❌ Leaking API keys, tokens, or credentials into Git history.
@@ -15,9 +21,7 @@ AI agents write code at superhuman speed, but speed without guardrails introduce
 
 **`agent-code-guard`** bundles production-grade CLI tools, native AI skills, system prompt rules, and blazing-fast parallel Git hooks into a **one-click setup**.
 
----
-
-## Included Arsenal
+### Included Arsenal
 
 | Tool | Engine | What It Protects |
 | :--- | :--- | :--- |
@@ -27,17 +31,14 @@ AI agents write code at superhuman speed, but speed without guardrails introduce
 | 🧹 **Knip** | Node / npm | Detects and removes unused files, dead exports, unused types, and unreferenced packages. |
 | 📋 **jscpd** | Node / npm | Detects duplicate and copy-pasted code blocks across 150+ programming languages. |
 
----
+### One-Line Installation
 
-## One-Line Installation
-
-### Windows (PowerShell)
-Run PowerShell as Administrator or regular user:
+#### Windows (PowerShell)
 ```powershell
 irm https://raw.githubusercontent.com/javadhamed/agent-code-guard/main/install.ps1 | iex
 ```
 
-### Linux & macOS (Bash)
+#### Linux & macOS (Bash)
 ```bash
 curl -fsSL https://raw.githubusercontent.com/javadhamed/agent-code-guard/main/install.sh | bash
 ```
@@ -48,20 +49,16 @@ The installer will:
 3. Verify `npx` availability for **Knip** and **jscpd**.
 4. Automatically register native Antigravity skills into your global config (`~/.gemini/config/skills/`).
 
----
+### How It Works in Your Projects
 
-## How It Works in Your Projects
-
-### 1. Initialize in Any Git Repository
-Inside any project repository:
+Inside any Git repository:
 ```bash
-# Apply pre-configured parallel hooks
+# Initialize hooks automatically
 agent-guard-init
-# or manually copy lefthook.yml
+# or manually via lefthook
 lefthook install
 ```
 
-### 2. Universal Git Hooks (`lefthook.yml`)
 When you (or an AI agent) run `git commit` or `git push`, Lefthook runs checks in parallel:
 ```yaml
 pre-commit:
@@ -88,17 +85,57 @@ pre-push:
 
 ---
 
-## Antigravity AI Skills
+<a name="persian"></a>
+## فارسی
 
-This package includes native AI Agent Skills located in `skills/`:
-- `gitleaks-security-audit`: Secrets and credential leak audit.
-- `osv-scanner-vulnerability-audit`: Software supply chain vulnerability scanner.
-- `knip-dead-code-cleanup`: Dead code and dependency eliminator.
-- `jscpd-duplicate-code-detection`: Copy-paste code detector.
-- `lefthook-git-hooks`: Fast Git hook manager.
+گاردریل‌های همه‌جانبه‌ی امنیت، سلامت و کیفیت کد برای ایجنت‌های هوش مصنوعی و توسعه‌دهندگان نرم‌افزار.
 
-### System Prompt Rules (`rules/AGENTS.md`)
-Copy `rules/AGENTS.md` into your project root or AI agent config to instruct AI models to automatically respect and enforce these guardrails during refactoring and commits.
+طراحی و بهینه‌سازی شده برای **Google Antigravity**، **Claude Code**، **Codex**، **Cursor** و تمام مخازن مدرن گیت.
+
+### ابزار agent-code-guard چیست؟
+
+دستیاران هوش مصنوعی با سرعتی شگفت‌انگیز کدنویسی می‌کنند، اما سرعت بدون گاردریل خطرات جدی به همراه دارد:
+- ❌ نشت تصادفی توکن‌ها، کلیدهای API و پسوردها در تاریخچه گیت.
+- ❌ اضافه شدن کتابخانه‌ها و پکیج‌های شخص‌ثالث با آسیب‌پذیری‌های امنیتی شناخته‌شده (CVE).
+- ❌ انباشت کدهای مرده، اکسپورت‌های اضافی و وابستگی‌های بلااستفاده.
+- ❌ تکثیر کدهای کپی‌پیشت‌شده و تکراری بین فایل‌ها و نقض اصل DRY.
+
+بسته **`agent-code-guard`** قوی‌ترین ابزارهای استانداردهای صنعتی، مهارت‌های محلی هوش مصنوعی، قوانین پرامپت سیستمی و هوک‌های موازی و فوق‌سریع گیت را در قالب یک **نصب تک‌کلیکه** تجمیع کرده است.
+
+### ابزارهای همراه پکیج
+
+| ابزار | هسته اجرایی | حوزه حفاظت |
+| :--- | :--- | :--- |
+| 🛡️ **Gitleaks** | باینری Go | جلوگیری از ورود اطلاعات حساس، توکن‌ها و کلیدهای محرمانه به کامیت‌ها. |
+| 🔍 **OSV-Scanner** | باینری Go (گوگل) | اسکن قفل‌فایل‌ها و مانیفست‌ها برای آسیب‌پذیری‌های امنیتی دیتابیس OSV.dev. |
+| ⚡ **Lefthook** | باینری Go (تیم Evil Martians) | ارکستراسیون موازی هوک‌های پیش از کامیت و پوش با سرعت بسیار بالا. |
+| 🧹 **Knip** | محیط Node / npm | کشف و حذف فایل‌های مرده، تایپ‌های بلااستفاده و وابستگی‌های اضافی در JS/TS. |
+| 📋 **jscpd** | محیط Node / npm | شناسایی قطعه‌کدهای تکراری و کپی‌پیشت‌شده در بیش از ۱۵۰ زبان برنامه‌نویسی. |
+
+### نصب تک‌خطی و آسان
+
+#### ویندوز (PowerShell)
+```powershell
+irm https://raw.githubusercontent.com/javadhamed/agent-code-guard/main/install.ps1 | iex
+```
+
+#### لینوکس و مک (Bash)
+```bash
+curl -fsSL https://raw.githubusercontent.com/javadhamed/agent-code-guard/main/install.sh | bash
+```
+
+اسکریپت نصب به صورت خودکار:
+۱. باینری‌های مستقل **Gitleaks**، **OSV-Scanner** و **Lefthook** را دانلود و در پوشه ابزارها ذخیره می‌کند.  
+۲. مسیر آن‌ها را به متغیر `PATH` سیستم اضافه می‌کند.  
+۳. مهارت‌های بومی را در مسیر تنظیمات Antigravity سیستم شما (`~/.gemini/config/skills/`) ثبت می‌کند.
+
+### نحوه استفاده در پروژه‌ها
+
+در ریشه هر ریپازیتوری گیت کافی است دستور زیر را اجرا کنید:
+```bash
+agent-guard-init
+```
+از این پس در هر بار کامیت یا پوش تغییرات، تمامی چک‌ها به صورت موازی در کسری از ثانیه اجرا شده و از سلامت و امنیت کد اطمینان حاصل می‌شود.
 
 ---
 
@@ -113,6 +150,14 @@ Copy `rules/AGENTS.md` into your project root or AI agent config to instruct AI 
 - **[jscpd](https://github.com/kucherenko/jscpd)** — Created and maintained by [Andrey Kucherenko](https://github.com/kucherenko). Multi-language duplicate code detection engine.
 
 Thank you to all the maintainers for keeping the software ecosystem clean, fast, and secure!
+
+---
+
+## ⭐ Star & Support | حمایت از پروژه
+
+If you find this project useful for securing your repositories and AI workflows, please consider giving it a **Star** on GitHub! It helps more developers and agents discover these guardrails.
+
+اگر این پروژه برای امنیت و کیفیت کدهای شما و دستیاران هوش مصنوعیتان مفید بود، لطفاً با دادن **ستاره (Star)** در بالای صفحه گیت‌هاب از توسعه آن حمایت کنید. حمایت شما باعث دیده‌شدن بیشتر این پروژه توسط جامعه توسعه‌دهندگان خواهد شد. ⭐
 
 ---
 
